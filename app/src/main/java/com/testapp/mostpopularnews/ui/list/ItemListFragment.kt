@@ -250,23 +250,23 @@ class ItemListFragment : Fragment() {
                         }
                     true
                 }
-                R.id.nav_drawer_create_news -> {
-                    val news = createRandomNews()
-                    itemListViewModel
-                        .performEvent(
-                            ItemListViewModel.ListUiEvent.CreateNews(
-                                news.title,
-                                news.newsAbstract,
-                                news.publishDate,
-                                news.category,
-                                news.author,
-                                news.source,
-                                news.url,
-                                news.images
-                            )
-                        )
-                    true
-                }
+//                R.id.nav_drawer_create_news -> {
+//                    val news = createRandomNews()
+//                    itemListViewModel
+//                        .performEvent(
+//                            ItemListViewModel.ListUiEvent.CreateNews(
+//                                news.title,
+//                                news.newsAbstract,
+//                                news.publishDate,
+//                                news.category,
+//                                news.author,
+//                                news.source,
+//                                news.url,
+//                                news.images
+//                            )
+//                        )
+//                    true
+//                }
                 else -> {
                     true
                 }
