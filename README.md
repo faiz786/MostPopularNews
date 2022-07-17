@@ -10,13 +10,13 @@ and uses MVVM with the Android architecture components dependency injection is u
 
 1. Clone the repo using ```https://github.com/faiz786/MostPopularNews.git```
 1. Open the project in Android Studio
-1. Generate a [NY Times API Key](https://developer.nytimes.com/get-started) 
-   ## Api Key is Already Added in gradle.properties
+1. Generate a [NY Times API Key](https://developer.nytimes.com/get-started)
 1. Add the API Key to your local `gradle.properties` file with the key `NY_TIMES_API_KEY` 
     and the value of your API Key e.g `NY_TIMES_API_KEY="cjCe8546151551894561s"`
-   ## if you want to add new api key generate api key on new york times dev portal and paste the key in gradle.properties
 1. Sync and build your project.
 1. Hit "Run". Done!
+   Api Key is Already Added in gradle.properties
+   if you want to add new api key generate api key on new york times dev portal and paste the key in gradle.properties
 ## Architecture Overview
 
 The application has three layers guided by clean architecture to provide clear 
