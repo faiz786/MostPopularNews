@@ -12,6 +12,7 @@
     <string name="source">Source</string>
     <string name="ascending">Ascending</string>
     <string name="descending">Descending</string>
+    <string name="ok">Ok</string>
     <string name="sort">Sort</string>
     <string name="cancel">Cancel</string>
     <string name="search">Search</string>

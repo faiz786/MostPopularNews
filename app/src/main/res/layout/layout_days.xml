@@ -17,17 +17,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RadioButton
-                android:id="@+id/radioButton_date"
+                android:id="@+id/radioButton_1Day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/one_day" />
             <RadioButton
-                android:id="@+id/radioButton_title"
+                android:id="@+id/radioButton_7Day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/seven_day" />
             <RadioButton
-                android:id="@+id/radioButton_category"
+                android:id="@+id/radioButton_30Day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/thirty_day" />

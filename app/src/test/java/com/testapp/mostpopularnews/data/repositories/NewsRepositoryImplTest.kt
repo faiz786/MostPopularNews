@@ -13,11 +13,11 @@ import com.testapp.mostpopularnews.data.room.joins.NewsInDbWithNewsImagesInDb
 import com.testapp.mostpopularnews.data.room.models.NewsImageInDb
 import com.testapp.mostpopularnews.data.room.models.NewsInDb
 import com.testapp.mostpopularnews.domain.models.OrderBy
-import com.testapp.latestnewsapp.utils.AppDispatchers
-import com.testapp.latestnewsapp.utils.DataState
-import com.testapp.latestnewsapp.utils.Utils.createRandomNews
-import com.testapp.latestnewsapp.utils.isConnectedToInternet
 import com.google.common.truth.Truth.assertThat
+import com.testapp.mostpopularnews.utils.AppDispatchers
+import com.testapp.mostpopularnews.utils.DataState
+import com.testapp.mostpopularnews.utils.Utils.createRandomNews
+import com.testapp.mostpopularnews.utils.isConnectedToInternet
 import io.mockk.*
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -124,7 +124,7 @@ class NewsRepositoryImplTest {
         every { context.isConnectedToInternet() } returns true
         val orderBy = OrderBy.Date()
         newsRepositoryImpl.getNews(null, orderBy).collect()
-        coVerify(exactly = 1) { nyTimesApi.getEmailedOrViewedNews() }
+        coVerify(exactly = 1) { nyTimesApi.getMostViewedNews(period = 7) }
     }
 
     @Test
@@ -132,7 +132,7 @@ class NewsRepositoryImplTest {
         every { context.isConnectedToInternet() } returns false
         val orderBy = OrderBy.Date()
         newsRepositoryImpl.getNews(null, orderBy).collect()
-        coVerify { nyTimesApi.getEmailedOrViewedNews() wasNot called }
+        coVerify { nyTimesApi.getMostViewedNews(period = 7) wasNot called }
     }
 
     @Test
@@ -148,7 +148,7 @@ class NewsRepositoryImplTest {
     fun `successful API request returns success`() = runBlockingTest {
         every { context.isConnectedToInternet() } returns true
         every { newsDao.getAllNews(any()) } returns flow { getNewsInDbItems() }
-        coEvery { nyTimesApi.getEmailedOrViewedNews() } returns successResponse
+        coEvery { nyTimesApi.getMostViewedNews(period = 7) } returns successResponse
         val last = newsRepositoryImpl.getNews("", OrderBy.Date()).last()
         assertThat(last).isInstanceOf(DataState.Success::class.java)
         assertThat((last as DataState.Success).data).isNotNull()
@@ -157,7 +157,7 @@ class NewsRepositoryImplTest {
     @Test
     fun `successful API request saves news items in database`() = runBlockingTest {
         every { context.isConnectedToInternet() } returns true
-        coEvery { nyTimesApi.getEmailedOrViewedNews() } returns successResponse
+        coEvery { nyTimesApi.getMostViewedNews(period = 7) } returns successResponse
         newsRepositoryImpl.getNews("", OrderBy.Date()).collect()
         coVerify(exactly = 1) { newsDao.upsert(any<List<NewsInDb>>()) }
     }
@@ -166,7 +166,7 @@ class NewsRepositoryImplTest {
     @Test
     fun `successful API request saves news images in database`() = runBlockingTest {
         every { context.isConnectedToInternet() } returns true
-        coEvery { nyTimesApi.getEmailedOrViewedNews() } returns successResponse
+        coEvery { nyTimesApi.getMostViewedNews(period = 7) } returns successResponse
         newsRepositoryImpl.getNews("", OrderBy.Date()).collect()
         coVerify(exactly = 1) { newsImageDao.upsert(any<List<NewsImageInDb>>()) }
     }
@@ -175,7 +175,7 @@ class NewsRepositoryImplTest {
     fun `unsuccessful API request returns failure`() = runBlockingTest {
         every { context.isConnectedToInternet() } returns true
         every { newsDao.getAllNews(any()) } returns flow { getNewsInDbItems() }
-        coEvery { nyTimesApi.getEmailedOrViewedNews() } returns failedResponse
+        coEvery { nyTimesApi.getMostViewedNews(period = 7) } returns failedResponse
         val last = newsRepositoryImpl.getNews("", OrderBy.Date()).last()
         assertThat(last).isInstanceOf(DataState.Failure::class.java)
         assertThat((last as DataState.Failure).data).isNotNull()
@@ -185,7 +185,7 @@ class NewsRepositoryImplTest {
     fun `successful API request with null body returns failure`() = runBlockingTest {
         every { context.isConnectedToInternet() } returns true
         every { newsDao.getAllNews(any()) } returns flow { getNewsInDbItems() }
-        coEvery { nyTimesApi.getEmailedOrViewedNews() } returns successResponseNullBody
+        coEvery { nyTimesApi.getMostViewedNews(period = 7) } returns successResponseNullBody
         val last = newsRepositoryImpl.getNews("", OrderBy.Date()).last()
         assertThat(last).isInstanceOf(DataState.Failure::class.java)
         assertThat((last as DataState.Failure).data).isNotNull()

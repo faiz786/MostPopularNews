@@ -16,7 +16,7 @@ interface NyTimesApi {
      */
 //    @GET("/svc/mostpopular/v2/{newsType}/{period}.json")
     @GET("/svc/mostpopular/v2/mostviewed/{newsType}/{period}.json")
-    suspend fun getEmailedOrViewedNews(
+    suspend fun getMostViewedNews(
         @Path("newsType") newsType: String = "all-sections",
         @Path("period") period: Int,
         @Query("api-key") apiKey: String = BuildConfig.NY_TIMES_API_KEY

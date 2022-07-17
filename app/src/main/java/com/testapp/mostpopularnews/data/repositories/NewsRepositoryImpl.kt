@@ -1,5 +1,6 @@
 package com.testapp.mostpopularnews.data.repositories
 
+import android.app.Application
 import android.content.Context
 import com.testapp.mostpopularnews.R
 import com.testapp.mostpopularnews.data.retrofit.NyTimesApi
@@ -60,7 +61,12 @@ class NewsRepositoryImpl @Inject constructor(
             val internetException = Exception(context.getString(R.string.internet_connection_error))
             if (context.isConnectedToInternet()) {
                 try {
-                    val viewedNews = nyTimesApi.getEmailedOrViewedNews(period = 7)
+                    val sharedPreferences = context.getSharedPreferences(
+                        "NewsDaysPref",
+                        Application.MODE_PRIVATE
+                    )
+                    val dayLimit = sharedPreferences.getInt("DayLimit",7)
+                    val viewedNews = nyTimesApi.getMostViewedNews(period = dayLimit)
                     val newsResponse = viewedNews.body()
                     // API call was successful
                     if (viewedNews.isSuccessful && newsResponse != null) {

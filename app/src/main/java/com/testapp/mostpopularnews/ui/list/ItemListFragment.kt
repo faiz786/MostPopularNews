@@ -1,6 +1,7 @@
 package com.testapp.mostpopularnews.ui.list
 
 
+import android.app.Application
 import android.content.Context
 import android.content.pm.PackageManager.MATCH_DEFAULT_ONLY
 import android.os.Bundle
@@ -29,6 +30,7 @@ import com.testapp.mostpopularnews.utils.DataState
 import com.testapp.mostpopularnews.utils.Utils.createRandomNews
 import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_LONG
 import com.google.android.material.snackbar.Snackbar
+import com.testapp.mostpopularnews.databinding.LayoutDaysBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.FlowPreview
 
@@ -311,7 +313,7 @@ class ItemListFragment : Fragment() {
             R.id.action_sort -> {
 //                val menuItemView: View = requireActivity().findViewById(item.itemId)
 //                showPopupMenu(menuItemView)
-                sortNewsItems()
+                saveDaysLimitPreference()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -376,6 +378,34 @@ class ItemListFragment : Fragment() {
                         ascending
                     )
                 )
+                dialog.dismiss()
+            }
+            .create()
+            .show()
+    }
+
+    private fun saveDaysLimitPreference() {
+        val layoutSortBinding = LayoutDaysBinding.inflate(layoutInflater, null, false).apply {
+        }
+
+        AlertDialog.Builder(requireContext())
+            .setView(layoutSortBinding.root)
+            .setNegativeButton(R.string.cancel) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setPositiveButton(R.string.ok) { dialog, _ ->
+                val daysLimit = when (layoutSortBinding.radioGroupColumns.checkedRadioButtonId) {
+                    R.id.radioButton_1Day -> 1
+                    R.id.radioButton_30Day -> 30
+                    else -> 7
+                }
+                val sharedPreferences = requireActivity().getSharedPreferences(
+                    "NewsDaysPref",
+                    Application.MODE_PRIVATE
+                )
+                var editor = sharedPreferences.edit()
+                editor.putInt("DayLimit",daysLimit)
+                editor.commit()
                 dialog.dismiss()
             }
             .create()

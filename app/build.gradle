@@ -56,9 +56,11 @@ android {
 
     testOptions {
         unitTests.all {
+            // Sets JVM argument(s) for the test JVM(s).
+            jvmArgs '-XX:MaxHeapSize=4096m'
             jacoco {
                 includeNoLocationClasses = true
-                excludes = ['jdk.internal.*']       //This line
+                excludes = ['jdk.internal.*']
             }
         }
         unitTests.returnDefaultValues = true

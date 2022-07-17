@@ -8,7 +8,6 @@ import com.testapp.mostpopularnews.domain.models.OrderBy
 import com.testapp.mostpopularnews.domain.models.OrderDirection
 import com.testapp.mostpopularnews.domain.usecases.CreateNews
 import com.testapp.mostpopularnews.domain.usecases.GetNews
-import com.testapp.mostpopularnews.getOrAwaitValue
 import com.testapp.mostpopularnews.utils.DataState
 import com.testapp.mostpopularnews.utils.Utils.createRandomNews
 import com.google.common.truth.Truth.assertThat
