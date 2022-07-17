@@ -1,6 +1,8 @@
-package com.testapp.mostpopularnews.domain.usecases
+package com.testapp.mostpopularnews.usecases
 
 import com.testapp.mostpopularnews.data.repositories.NewsRepositoryImpl
+import com.testapp.mostpopularnews.domain.usecases.GetNewsById
+import com.testapp.mostpopularnews.utils.DataState
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

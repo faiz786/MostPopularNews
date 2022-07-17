@@ -24,27 +24,12 @@ separation of concerns:
 
 ![Three layer architecture](https://developer.android.com/topic/libraries/architecture/images/mad-arch-domain-overview.png)
 
-## The Application is Divided into #UI containing Activities Fragments And ViewModels for handling the states of UI
+The Application is Divided into 
+#UI containing Activities Fragments And ViewModels for handling the states of UI 
 #domain for handling models repositories
 #data which is divided into local and remote local being Room database for showing news in offline cases and remote data is handled through retrofit
 
 
-## Testing
-
-Most packages, and files, have their own tests, with exceptions such as the dependency 
-injection files.  
-
-Server responses are mocked and verified for correctness. The local 
-database is tested using an in-memory database that is faster than an actual database 
-and only lasts the duration of the test.  
-
-Use cases are also tested for correctness and validation of data.
-
-ViewModels were also tested for correctness using the UseCases and the repository with 
-a mock webserver and an in-memory database.
-
-The instrumentation tests use a mocked context and a mocked server. This is to test 
-various scenarios including the unavailability of internet. 
 
 ### Running the tests
 
