@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/day"
+        android:title="@string/one_day"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/week"
+        android:title="@string/seven_day"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/month"
+        android:title="@string/thirty_day"
+        app:showAsAction="ifRoom" />
+</menu>
