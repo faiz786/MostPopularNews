@@ -1,10 +1,9 @@
-package com.testapp.mostpopularnews.usecases
+package com.testapp.mostpopularnews.domain.usecases
 
 import com.testapp.mostpopularnews.data.repositories.NewsRepositoryImpl
 import com.testapp.mostpopularnews.domain.models.News
-import com.testapp.mostpopularnews.domain.usecases.CreateNews
-import com.google.common.truth.Truth.assertThat
 import com.testapp.mostpopularnews.utils.DataState
+import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

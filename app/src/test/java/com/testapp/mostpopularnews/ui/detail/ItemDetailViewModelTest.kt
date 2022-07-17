@@ -3,8 +3,8 @@ package com.testapp.mostpopularnews.ui.detail
 import CoroutineTestRule
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.testapp.mostpopularnews.domain.usecases.GetNewsById
-import com.google.common.truth.Truth.assertThat
 import com.testapp.mostpopularnews.utils.DataState
+import com.google.common.truth.Truth.assertThat
 import getOrAwaitValue
 import io.mockk.coEvery
 import io.mockk.coVerify

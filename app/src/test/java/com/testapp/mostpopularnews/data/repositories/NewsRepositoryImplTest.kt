@@ -1,9 +1,9 @@
 package com.testapp.mostpopularnews.data.repositories
 
-import android.content.Context
 import ApiResponses.failedResponse
 import ApiResponses.successResponse
 import ApiResponses.successResponseNullBody
+import android.content.Context
 import com.testapp.mostpopularnews.data.retrofit.NyTimesApi
 import com.testapp.mostpopularnews.data.retrofit.RetrofitNewsMapper
 import com.testapp.mostpopularnews.data.room.RoomNewsMapper
@@ -13,11 +13,11 @@ import com.testapp.mostpopularnews.data.room.joins.NewsInDbWithNewsImagesInDb
 import com.testapp.mostpopularnews.data.room.models.NewsImageInDb
 import com.testapp.mostpopularnews.data.room.models.NewsInDb
 import com.testapp.mostpopularnews.domain.models.OrderBy
-import com.google.common.truth.Truth.assertThat
 import com.testapp.mostpopularnews.utils.AppDispatchers
 import com.testapp.mostpopularnews.utils.DataState
 import com.testapp.mostpopularnews.utils.Utils.createRandomNews
 import com.testapp.mostpopularnews.utils.isConnectedToInternet
+import com.google.common.truth.Truth.assertThat
 import io.mockk.*
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi

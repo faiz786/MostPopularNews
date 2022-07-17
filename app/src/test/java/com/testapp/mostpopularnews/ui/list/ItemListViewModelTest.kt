@@ -1,7 +1,7 @@
 package com.testapp.mostpopularnews.ui.list
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import CoroutineTestRule
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.testapp.mostpopularnews.domain.models.News
 import com.testapp.mostpopularnews.domain.models.NewsImage
 import com.testapp.mostpopularnews.domain.models.OrderBy
@@ -184,6 +184,16 @@ class ItemListViewModelTest {
         val images = emptyList<NewsImage>()
         itemListViewModel.performEvent(
             ItemListViewModel.ListUiEvent.CreateNews
+                (
+                title,
+                newsAbstract,
+                publishDate,
+                category,
+                author,
+                source,
+                url,
+                images
+            )
         )
         coVerify(exactly = 1) {
             createNews(
@@ -222,6 +232,16 @@ class ItemListViewModelTest {
         val images = emptyList<NewsImage>()
         itemListViewModel.performEvent(
             ItemListViewModel.ListUiEvent.CreateNews
+                (
+                title,
+                newsAbstract,
+                publishDate,
+                category,
+                author,
+                source,
+                url,
+                images
+            )
         )
         val singleEvent = itemListViewModel.singleEventState.getOrAwaitValue()
         assertThat(singleEvent).isInstanceOf(ItemListViewModel.ListSingleEvent.ShowSnackbar::class.java)
@@ -251,6 +271,16 @@ class ItemListViewModelTest {
         val images = emptyList<NewsImage>()
         itemListViewModel.performEvent(
             ItemListViewModel.ListUiEvent.CreateNews
+                (
+                title,
+                newsAbstract,
+                publishDate,
+                category,
+                author,
+                source,
+                url,
+                images
+            )
         )
         val singleEvent = itemListViewModel.singleEventState.getOrAwaitValue()
         assertThat(singleEvent).isInstanceOf(ItemListViewModel.ListSingleEvent.ShowSnackbar::class.java)

@@ -1,8 +1,7 @@
-package com.testapp.mostpopularnews.usecases
+package com.testapp.mostpopularnews.domain.usecases
 
 import com.testapp.mostpopularnews.data.repositories.NewsRepositoryImpl
 import com.testapp.mostpopularnews.domain.models.OrderBy
-import com.testapp.mostpopularnews.domain.usecases.GetNews
 import com.testapp.mostpopularnews.utils.DataState
 import io.mockk.coEvery
 import io.mockk.coVerify
