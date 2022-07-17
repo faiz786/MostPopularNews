@@ -15,8 +15,7 @@ and uses MVVM with the Android architecture components dependency injection is u
     and the value of your API Key e.g `NY_TIMES_API_KEY="cjCe8546151551894561s"`
 1. Sync and build your project.
 1. Hit "Run". Done!
-   Api Key is Already Added in gradle.properties
-   if you want to add new api key generate api key on new york times dev portal and paste the key in gradle.properties
+   Note:Api Key is Already Added in gradle.properties, if you want to add new api key generate api key on new york times dev portal and paste the key in gradle.properties
 ## Architecture Overview
 
 The application has three layers guided by clean architecture to provide clear 
