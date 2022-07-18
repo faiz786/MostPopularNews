@@ -45,7 +45,7 @@ require the use of connected Android device.
     - HTML test result files at `/app/build/reports/androidTests/connected/`
     - XML test result files at `/app/build/outputs/androidTest-results/connected/`
     - 
-Note: Just iin case you encounter problem running test using command due to memory or some other issue you can run individual test classes in placed in app>src>test directory
+Note: Just in case you encounter problem running test using command mentioned above due to memory or some other issue you can run individual test classes placed in app>src>test directory
     
 ## Libraries
 
