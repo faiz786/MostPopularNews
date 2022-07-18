@@ -44,6 +44,9 @@ require the use of connected Android device.
 1. Locate the instrumented test results at
     - HTML test result files at `/app/build/reports/androidTests/connected/`
     - XML test result files at `/app/build/outputs/androidTest-results/connected/`
+    - 
+Note: Just iin case you encounter problem running test using command due to memory or some other issue you can run individual test classes in placed in app>src>test directory
+    
 ## Libraries
 
  
