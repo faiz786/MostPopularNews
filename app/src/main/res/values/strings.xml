@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Times Most Popular</string>
+    <string name="app_name">NY Times Most Popular</string>
     <string name="title_item_detail">Item Detail</string>
     <string name="about">About</string>
     <string name="press_back_again">Press back again to exit</string>
