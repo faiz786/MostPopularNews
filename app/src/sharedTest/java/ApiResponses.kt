@@ -1,6 +1,6 @@
 import com.google.gson.GsonBuilder
-import com.testapp.mostpopularnews.data.retrofit.models.NewsResponse
-import com.testapp.mostpopularnews.data.retrofit.utils.GsonDateDeSerializer
+import com.testapp.mostpopularnews.data.models.NewsResponse
+import com.testapp.mostpopularnews.utils.GsonDateDeSerializer
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.ResponseBody.Companion.toResponseBody
 import retrofit2.Response

@@ -2,7 +2,7 @@ package com.testapp.mostpopularnews.data.remote
 
 import com.testapp.mostpopularnews.utils.Resource
 import retrofit2.Response
-import timber.log.Timber
+//import timber.log.Timber
 
 abstract class BaseDataSource {
 
@@ -20,7 +20,7 @@ abstract class BaseDataSource {
     }
 
     private fun <T> error(message: String): Resource<T> {
-        Timber.d(message)
+//        Timber.d(message)
         return Resource.error("Network call has failed for a following reason: $message")
     }
 

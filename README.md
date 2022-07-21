@@ -21,7 +21,7 @@ and uses MVVM with the Android architecture components dependency injection is u
 The application has three layers guided by clean architecture to provide clear
 separation of concerns:
 
-![Three layer architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel#/media/File:MVVMPattern.png)
+![MVVM](/https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel#/media/File:MVVMPattern.png)
 
 The Application is Divided into
 Model ViewModel View
@@ -44,13 +44,17 @@ require the use of connected Android device.
     - XML test result files at `/app/build/outputs/androidTest-results/connected/`
 
 Note: To Run Test and generate Report You can Better Do The Following Steps instead of above commands
+
 For Running Test Right Click On Test Folder inside src directory and click Run Tests in MostPopularNews
 you can locate test report at app>build>reports>index.html
+
 For Generating Code Coverage Report Right Click on Test Folder inside src directory and click Run Tests in MostPopularNews with coverage
 after it finishes you will see report on the right hand side of android studio there you need to click generate coverage report on icon with arrow
 there you need to specify output directory and you need check mark open generated html in browser to view report immediately in browser
 it looks something like this
-![ScreenShot](/Screenshots/coverage_report.png)
+
+![ScreenShot](/screenshots/coverage_report.png)
+
 ## Libraries
 
 
