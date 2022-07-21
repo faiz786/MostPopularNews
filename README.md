@@ -2,7 +2,7 @@
 # Most Popular News
 
 Most Popular News is an Android application consuming the [NY Times API](https://developer.nytimes.com/)
-to display most popular news over the last 1,7 or 30 days. The app follows clean architecture principles
+to display most popular news over the last 7 days. The app follows clean architecture principles
 and uses MVVM with the Android architecture components dependency injection is used in application using Hilt Library.
 
 
@@ -66,7 +66,6 @@ Libraries used in the whole application are:
 - [Gson](https://github.com/square/moshi) - Library that can be used to convert Kotlin Objects into/from their JSON representation
 - [okhttp-logging-interceptor](https://github.com/square/okhttp/blob/master/okhttp-logging-interceptor/README.md) - logs HTTP request and response data.
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - Threads on steroids for Kotlin
-- [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/) - A cold asynchronous data stream that sequentially emits values and completes normally or with an exception.
 - [Truth](https://truth.dev/) - Assertions Library,provides readability as far as assertions are concerned
 - [Material Design](https://material.io/develop/android/docs/getting-started/) - build awesome beautiful UIs.🔥🔥
 - [Espresso](https://developer.android.com/training/testing/espresso) - Test framework to write UI Tests
