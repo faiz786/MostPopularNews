@@ -57,7 +57,6 @@ class NewsListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         setupObservers()
-        fetchDataFromRemote()
     }
 
     private fun setupRecyclerView() {
@@ -77,7 +76,6 @@ class NewsListFragment : Fragment() {
 
         }
         adapter = NewsAdapter(listener)
-        binding.recyclerView.setItemAnimator(null);
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }
