@@ -21,12 +21,10 @@ and uses MVVM with the Android architecture components dependency injection is u
 The application has three layers guided by clean architecture to provide clear
 separation of concerns:
 
-![Three layer architecture](https://developer.android.com/topic/libraries/architecture/images/mad-arch-domain-overview.png)
+![Three layer architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel#/media/File:MVVMPattern.png)
 
 The Application is Divided into
-#UI containing Activities Fragments And ViewModels for handling the states of UI
-#domain for handling models repositories
-#data which is divided into local and remote local being Room database for showing news in offline cases and remote data is handled through retrofit
+Model ViewModel View
 
 
 
