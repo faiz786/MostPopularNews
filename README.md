@@ -21,7 +21,7 @@ and uses MVVM with the Android architecture components dependency injection is u
 The application has three layers guided by clean architecture to provide clear
 separation of concerns:
 
-![MVVM](/https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel#/media/File:MVVMPattern.png)
+![MVVM](/screenshots/mvvm_image.png)
 
 The Application is Divided into
 Model ViewModel View

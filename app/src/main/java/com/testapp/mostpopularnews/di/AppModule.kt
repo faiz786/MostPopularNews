@@ -50,11 +50,11 @@ object AppModule {
     }
 
     @Provides
-    fun provideCharacterService(retrofit: Retrofit): NewsBackgroundService = retrofit.create(NewsBackgroundService::class.java)
+    fun provideNewsBackgroundService(retrofit: Retrofit): NewsBackgroundService = retrofit.create(NewsBackgroundService::class.java)
 
     @Singleton
     @Provides
-    fun provideCharacterRemoteDataSource(newsBackgroundService: NewsBackgroundService) = NewsRemoteDataSource(newsBackgroundService)
+    fun provideNewsRemoteDataSource(newsBackgroundService: NewsBackgroundService) = NewsRemoteDataSource(newsBackgroundService)
 
     @Singleton
     @Provides
